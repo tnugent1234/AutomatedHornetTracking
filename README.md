@@ -3,4 +3,4 @@ An automated system for characterising hornet colony activity in nature by combi
 
 Within this repository are the model and system code along with usage instructions.
 
-<p align="center"><img src=https://github.com/tnugent1234/Remotely_Invasive_Hornet_Tracking/blob/main/Images/Hornet%20Tracking%20Example.gif/></p>
+<p align="center"><img src=https://github.com/tnugent1234/AutomatedHornetTracking/blob/main/Images/Hornet%20Tracking%20Example.gif/></p>
