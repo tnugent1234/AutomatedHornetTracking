@@ -29,8 +29,7 @@ import argparse
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Hornet Tracker')
-parser.add_argument('--video', type=str, help='Path to the video file for analysis', 
-                    default="C://Users//tao213//Miniconda3//Test//MAH00001.1.mp4")
+parser.add_argument('--video', type=str, help='Path to the video file for analysis', required=True)
 args = parser.parse_args()
 
 # Get the source video name
@@ -369,9 +368,9 @@ video_writer = cv2.VideoWriter(output_video_path, cv2.VideoWriter_fourcc(*"mp4v"
 # Initialise object counter object without showing the default region
 counter = solutions.ObjectCounter(
     show=True,  # display the output
-    model="HornetTrackingModel.pt",  # model="yolo11n-obb.pt" for object counting with OBB model.
-    # classes=[0, 2],  # count specific classes i.e. person and car with COCO pretrained model.
-    tracker="customtrack.yaml",  # choose trackers i.e "bytetrack.yaml"
+    model=os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Models', 'HornetTrackingModel.pt'),  # choose model i.e "HornetTrackingModel.pt".
+    # classes=[0, 2],  # count specific classes.
+    tracker=os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Trackers', 'customtrack.yaml'),  # choose tracker i.e "bytetrack.yaml"
     conf=0.7,  # confidence threshold
 )
 
@@ -386,7 +385,7 @@ if not success:
     raise ValueError("Could not read first frame from video")
 
 # Get first frame detections
-first_frame_results = counter.model.track(im0, persist=True, tracker="customtrack.yaml")
+first_frame_results = counter.model.track(im0, persist=True, tracker=os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Trackers', 'customtrack.yaml'))
 if first_frame_results[0].boxes is not None and first_frame_results[0].boxes.id is not None:
     first_frame_ids = first_frame_results[0].boxes.id.int().cpu().tolist()
     for track_id in first_frame_ids:
@@ -449,7 +448,7 @@ while cap.isOpened():
     current_radius = scaled_radius
     
     # Get detections with tracking
-    results = counter.model.track(im0, persist=True, tracker="customtrack.yaml")
+    results = counter.model.track(im0, persist=True, tracker=os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Trackers', 'customtrack.yaml'))
     
     # Store current frame objects for last frame check in next iteration
     last_frame_objects = current_frame_objects.copy()
