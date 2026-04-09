@@ -5,6 +5,9 @@ An automated system for quantifying invasive hornet activity at colonies via dee
 
 ## Contents
 * [Models](Models) Trained YOLO11n detection models for use with the system.
-* [Scripts](Scripts) Central processing and GUI scripts for running the system.
+* [Scripts](Scripts) Central processing pipeline and GUI scripts for running the system.
 * [Trackers](Trackers) ByteTrack and CustomTrack .yaml files for configuring tracking algorithms.
 * [Images](Images) Example tracking sequences from the system.
+
+## Install
+To use the system, download the [Scripts](Scripts), [Models](Models), and [Trackers](Trackers) into your Python directory or virtual environment, and run [requirements.txt](requirements.txt) to install all requisite packages.
