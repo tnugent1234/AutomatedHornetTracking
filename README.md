@@ -10,4 +10,7 @@ An automated system for quantifying invasive hornet activity at colonies via dee
 * [Images](Images) Example tracking sequences from the system.
 
 ## Install
-To use the system, download the [Scripts](Scripts), [Models](Models), and [Trackers](Trackers) into your Python directory or virtual environment, and run [requirements.txt](requirements.txt) to install all requisite packages.
+Download the repository into your Python directory or virtual environment, and run [requirements.txt](requirements.txt) to install all required packages.
+
+## Quick Start
+Once installed, run [HornetTrackerGUI.py](HornetTrackerGUI.py) to use the system.
