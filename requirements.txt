@@ -4,3 +4,5 @@ numpy>=1.19.0
 ultralytics>=8.0.0
 matplotlib>=3.4.0
 scipy>=1.7.0
+shapely>==2.0.2
+lap>==0.5.13
