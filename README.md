@@ -8,6 +8,7 @@ An automated system for quantifying invasive hornet activity at colonies via dee
 * [Scripts](Scripts) Central processing pipeline and GUI scripts for running the system.
 * [Trackers](Trackers) ByteTrack and CustomTrack .yaml files for configuring tracking algorithms.
 * [Images](Images) Example tracking sequences from the system.
+* [Test](Test) Test video for validating the system.
 
 ## Install
 Download the repository into your Python directory or virtual environment, and run [requirements.txt](requirements.txt) to install all required packages.
